@@ -1,0 +1,10 @@
+.maincontainer{
+  height: 1000px;
+  width: 100%;
+  background-color: #dee2e6;
+  position: absolute;
+  }
+.table{
+  background-color: whitesmoke;
+  position: relative;
+}

@@ -1,0 +1,220 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+  <h5 class="my-0 mr-md-auto font-weight-normal">My Dashboard</h5>
+  </div>
+<div class="container-fluid maincontainer">
+  <div class="card-deck mb-2" >
+  <div class="card mb-2 box-shadow">
+
+  <div class="container">
+  <div class="card-deck mb-2">
+  <div class="card mb-2 box-shadow">
+  <div class="card-header">
+  <h4 class="my-0 font-weight-normal">My Department(s)</h4>
+  </div>
+  <div class="card-body">
+  <div class="stats-title pull-left">
+
+  </div>
+  <div class="stats-icon pull-right">
+  <i class="pe-7s-monitor fa-4x"></i>
+  </div>
+  <div class="m-t-xl">
+  <h1 class="text-success"><strong></strong></h1>
+  <small>
+  You are currently associated to <span><a href="#">Know more </a>about this department.</span> department(s).
+  </small>
+  </div>
+  </div>
+  </div>
+
+  <div class="card mb-2 box-shadow">
+  <div class="card-header">
+  <h4 class="my-0 font-weight-normal">My Manager</h4>
+  </div>
+  <div class="card-body">
+  <div class="stats-title pull-left">
+
+  </div>
+  <div class="stats-icon pull-right">
+  <i class="pe-7s-shuffle fa-4x"></i>
+  </div>
+  <div class="m-t-xl">
+  <h1 class="text-info">Man Shiv</h1>
+  <small>
+  Since 4/23/2019, You are reporting to <strong>Man Shiv</strong>. <a href="#">know more </a>about your manager.
+  </small>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+  <!-- <div class="container">
+
+      <div class="hpanel panel-collapse">
+
+      <div class="panel-heading">
+      <div class="panel-tools">
+      <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+      <a class="closebox"><i class="fa fa-times"></i></a>
+      </div>
+    <h5>Personal Information</h5>
+
+      <button type="button" style="float:right;" class="btn btn-maincontainer" data-toggle="collapse" data-target="#demo">^</button>
+      <div id="demo" class="collapse">
+          <div class="card-deck mb-2">
+              <div class="card mb-2 box-shadow">
+
+              <div class="card-body">
+              <div class="stats-title pull-left">
+
+              </div>
+              <div class="stats-icon pull-right">
+              <i class="pe-7s-shuffle fa-4x"></i>
+              </div>
+              </div>
+              <div class="m-t-xl">
+
+-->
+
+<div class="table">
+<mat-expansion-panel [(expanded)]="xpandStatus">
+<mat-expansion-panel-header>
+<mat-panel-title><h2>Personal Information</h2></mat-panel-title>
+<!-- <mat-panel-description>xpandStatus is {{xpandStatus}}</mat-panel-description> -->
+</mat-expansion-panel-header>
+<div class="container">
+<div class="logindetail">
+    <table class="table table-striped">
+   <!-- <thead>
+     <tr>
+
+       <th>First name</th>
+       <th>Last name</th>
+       <th>DOB</th>
+       <th>Gender</th>
+       <th>Date Of Joining</th>
+       <th>Address1</th>
+       <th>Address2</th>
+       <th>City</th>
+       <th>State</th>
+       <th>Country</th>
+       <th>Race</th>
+       <th>Ethnicity</th>
+       <th>marital_status</th>
+       <th>Language</th>
+       <th>SSN_Govtid</th>
+       <th>Email</th>
+       <th>Cell_phone</th>
+       <th>Home_phone</th>
+       <th>Work_phone</th>
+       <th>Extension</th>
+      </tr>
+   </thead> -->
+
+   <tbody class="row1">
+     <tr *ngFor="let Login of arrlogin;let i=index">
+     <!-- <th scope="row">{{i+1}}</th> -->
+
+       <td>
+          <span class="label">Firstname</span><br>
+        <h5> {{Login.Firstname}}</h5></td>
+
+       <td>
+          <span class="label2">Lastname</span><br>
+        <h5>{{Login.Lastname}}</h5></td>
+
+        <td>
+            <span class="label3">DOB</span><br>
+         <h5> {{Login.DOB}}</h5></td>
+
+         <td>
+            <span class="label4">Gender</span><br>
+          <h5>{{Login.Gender}}</h5></td>
+
+       <td>
+          <span class="label5">Date Of Joining</span><br>
+        <h5>{{Login.DOJ}}</h5></td>
+       </tr>
+
+       <tr *ngFor="let Login of arrlogin;let i=index">
+
+        <td>
+            <span class="label6">Address1</span><br>
+          <h5>{{Login.Address1}}</h5></td>
+
+          <td>
+              <span class="label7">Address2</span><br>
+            <h5>{{Login.Address2}}</h5></td>
+
+       <td>
+          <span class="label8">City</span><br>
+        <h5>{{Login.City}}</h5></td>
+
+       <td>
+          <span class="label9">State</span><br>
+        <h5>{{Login.State}}</h5></td>
+
+       <td>
+          <span class="label10">Country</span><br>
+        <h5>{{Login.Country}}</h5></td>
+        </tr>
+
+
+        <tr *ngFor="let Login of arrlogin;let i=index">
+       <td>
+          <span class="label11">Race</span><br>
+        <h5>{{Login.Race}}</h5></td>
+
+       <td>
+          <span class="label12">Ethnicity</span><br>
+        <h5>{{Login.Ethnicity}}</h5></td>
+
+       <td>
+          <span class="label13">marital_status</span><br>
+        <h5>{{Login.marital_status}}</h5></td>
+
+       <td>
+          <span class="label14">Language</span><br>
+        <h5>{{Login.Language}}</h5></td>
+
+       <td>
+          <span class="label15">SSN_Govtid</span><br>
+       <h5>{{Login.SSN_Govtid}}</h5></td>
+
+        </tr>
+
+
+        <tr *ngFor="let Login of arrlogin;let i=index">
+        <td>
+            <span class="label16">Email</span><br>
+          <h5>{{Login.Email}}</h5></td>
+
+       <td>
+          <span class="label17">Cell_phone</span><br>
+         <h5>{{Login.Cell_phone }}</h5></td>
+
+       <td>
+          <span class="label18">Home_phone</span><br>
+        <h5>{{Login.Home_phone}}</h5></td>
+
+
+       <td>
+          <span class="label19">Work_phone</span><br>
+        <h5>{{Login.Work_phone}}</h5></td>
+
+       <td>
+          <span class="label20">Extension</span><br>
+        <h5>{{Login.Extension}}</h5></td>
+     </tr>
+
+   </tbody>
+
+
+  </table>
+</div>
+</div>
+</mat-expansion-panel>
+</div>
