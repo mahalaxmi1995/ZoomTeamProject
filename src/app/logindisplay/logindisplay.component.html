@@ -1,56 +1,151 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-  <h5 class="my-0 mr-md-auto font-weight-normal">My Dashboard</h5>
-  </div>
-<div class="container-fluid maincontainer">
-  <div class="card-deck mb-2" >
-  <div class="card mb-2 box-shadow">
+<div class="final">
+  <mat-toolbar class="mat-elevation-z6" color="primary">
+    <img class="zlogo" src="assets/ztlogo1.png">
+    <div class="vertical-line">
 
-  <div class="container">
-  <div class="card-deck mb-2">
-  <div class="card mb-2 box-shadow">
-  <div class="card-header">
-  <h4 class="my-0 font-weight-normal">My Department(s)</h4>
-  </div>
-  <div class="card-body">
-  <div class="stats-title pull-left">
+    </div>
+    <img class="hamberger" (click)="opened = !opened" src="assets/ham.png">&nbsp;
+    <div class="vertical-line">
 
-  </div>
-  <div class="stats-icon pull-right">
-  <i class="pe-7s-monitor fa-4x"></i>
-  </div>
-  <div class="m-t-xl">
-  <h1 class="text-success"><strong></strong></h1>
-  <small>
-  You are currently associated to <span><a href="#">Know more </a>about this department.</span> department(s).
-  </small>
-  </div>
-  </div>
-  </div>
+    </div>&nbsp;&nbsp;
+    <mat-form-field>
+      <input class="filter" matInput placeholder=" Team Member Search">
+    </mat-form-field>
 
-  <div class="card mb-2 box-shadow">
-  <div class="card-header">
-  <h4 class="my-0 font-weight-normal">My Manager</h4>
-  </div>
-  <div class="card-body">
-  <div class="stats-title pull-left">
 
-  </div>
-  <div class="stats-icon pull-right">
-  <i class="pe-7s-shuffle fa-4x"></i>
-  </div>
-  <div class="m-t-xl">
-  <h1 class="text-info">Man Shiv</h1>
-  <small>
-  Since 4/23/2019, You are reporting to <strong>Man Shiv</strong>. <a href="#">know more </a>about your manager.
-  </small>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
 
-  </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="main-sidenav-container" (backdropClick)="opened = !opened">
+    <mat-sidenav [mode]="mode" [opened]="opened" [fixedInViewport]="true" [fixedTopGap]="layoutGap">
+      <button mat-button (click)="opened = !opened">
+
+      </button>
+      <img class="rounded-circle img-round" src="assets/nat.jpg"><br />
+      <label class="lbl-name">Admin manju</label>
+      <div class="btn-group-vertical btn-sidenav">
+        <span class="btn-btn">HRMS</span>
+        <span class="btn-btn">Projects</span>
+        <span class="btn-btn">Task Boards</span>
+        <span class="btn-btn">Chats</span>
+        <span class="btn-btn">Knowledge base</span>
+        <span class="btn-btn">Reports</span>
+        <span  class="btn-btn" (click)="next()" >Settings</span>
+      </div>
+    </mat-sidenav>
+
+    <!-- Dashboard design -->
+    <ul class="nav justify-content-end">
+      <h1 class="header">My Dashboard</h1>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">My Dashboard</a>
+      </li>
+      <div class="vertical">
+
+      </div>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Leave/Vacation Management</a>
+      </li>
+      <div class="vertical">
+
+      </div>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Holidy List</a>
+      </li>
+      <div class="vertical">
+
+      </div>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Organization Chart</a>
+      </li>
+    </ul>
+    <div class="container-fluid maincontainer">
+        <mat-layout>
+        <div class="first-container">
+          <div style="min-width: 100%;">
+
+
+            <div class="col3Card">
+              <div class="card" style="width: 24rem;">
+                <div class="card-body">
+                  <div class="card-sec">
+                    <span class="card-one">MY DEPARTMENT(S) </span><br />
+                    <span class="card-minititle">Yourdrs - Web Development </span><br />
+
+                    <small class="card-paragraph">You are currently associated to Know more about this department.
+                      department(s)..</small>
+                  </div>
+                  <div class="icon">
+                    <img src="assets/24px.svg">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col3Card">
+              <div class="card" style="width: 25rem; height: 16rem;">
+
+                <div class="card-body">
+                  <div class="card-sec">
+
+                    <span class="card-one">MY MANAGER</span><br />
+                    <h1 class="mgr-name">Man Shiv</h1>
+                    <small class="card-paragraph">Since 4/23/2019, You are reporting to Man Shiv. know more about your
+                      manager.</small>
+                  </div>
+                  <div class="icon">
+                    <img class="height" src="assets/shuffle.svg">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col6Card">
+              <div class="card" style="width: 60rem; height: 20rem;">
+                <div class="card-body">
+                  <table class="table table-striped" style="margin-top:20px;">
+                    <thead>
+                      <tr class="table-head">
+                        <th scope="col">Leave / Vacation Type</th>
+                        <th scope="col">Requested Date</th>
+                        <th scope="col">Applied for</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Sent to
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="leave-type">Earned Leave</th>
+                        <td>Aug 25, 2014 </td>
+                        <td>Sept 7, 2014 </td>
+                        <td>Pending</td>
+                        <td>Othon Mourkakos</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="leave-type">Sick Leave</th>
+                        <td>Jul 14, 2013 </td>
+                        <td>Jul 27, 2013 </td>
+                        <td>Approved</td>
+                        <td>Othon Mourkakos</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="leave-type">Sick Leave</th>
+                        <td>Jan 1, 2013 </td>
+                        <td>Jan 1, 2013 </td>
+                        <td>Approved</td>
+                        <td>Othon Mourkakos</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </mat-layout>
   <!-- <div class="container">
 
       <div class="hpanel panel-collapse">
@@ -79,15 +174,19 @@
 
 -->
 
-<div class="table">
+<div class="expansion">
+  <p>
 <mat-expansion-panel [(expanded)]="xpandStatus">
 <mat-expansion-panel-header>
-<mat-panel-title><h2>Personal Information</h2></mat-panel-title>
-<!-- <mat-panel-description>xpandStatus is {{xpandStatus}}</mat-panel-description> -->
+<mat-panel-title>
+  <h2 class="ptitle">Personal Information</h2>
+</mat-panel-title>
+<mat-panel-description></mat-panel-description>
 </mat-expansion-panel-header>
-<div class="container">
-<div class="logindetail">
-    <table class="table table-striped">
+
+<div class="panel-body" style="display: block;">
+<div>
+    <table cellpadding="1" cellspacing="1" class="table table-striped">
    <!-- <thead>
      <tr>
 
@@ -114,7 +213,7 @@
       </tr>
    </thead> -->
 
-   <tbody class="row1">
+   <tbody>
      <tr *ngFor="let Login of arrlogin;let i=index">
      <!-- <th scope="row">{{i+1}}</th> -->
 
@@ -209,12 +308,13 @@
           <span class="label20">Extension</span><br>
         <h5>{{Login.Extension}}</h5></td>
      </tr>
-
    </tbody>
-
-
   </table>
 </div>
 </div>
 </mat-expansion-panel>
+</p>
+</div>
+    </div>
+</mat-sidenav-container>
 </div>

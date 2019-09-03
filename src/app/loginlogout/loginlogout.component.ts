@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {  OnInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,17 +9,20 @@ import { Router } from '@angular/router';
 export class LoginlogoutComponent implements OnInit {
   username: string;
   password: string;
+  isRemberMeChecked:string;
   constructor(private router : Router) { }
 
   ngOnInit() {
   }
   login() {
-    if(this.username == 'Admin' && this.password == 'Password@1') {
-      this.router.navigate(['dashboard']);
+    if(this.username == 'A' && this.password == 'P') {
+      this.router.navigate(['/dashboard']);
     }else {
       alert("Invalid credentials.")
 
     }
+
   }
 
 }
+
