@@ -1,16 +1,31 @@
-<nav class="navbar navbar-default">
-    <a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;">
-      <i class="fa fa-file-o"></i> Manage Organizations &amp; Users
-    </a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" routerLink='/design1'>All Documents</a>
-      <a class="dropdown-item" routerLink="/design">Designations</a>
-    </div>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Manage Designation</h5>
+   <nav class="my-2 my-md-0 mr-md-3">
+      <a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;" aria-expanded="false">
+          <i class="fa fa-file-o" (click)="designation()" (click)="Alldoc()" ></i> Manage Organizations &amp; Users
+      </a>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink='/alldoc'>All Documents</a>
+          <a class="dropdown-item" routerLink="/designation">Designations</a>
+        </div>
+      <a class="dropdown-toggle" href="#" data-toggle="dropdown" style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;" aria-expanded="true">
+          <i class="fa fa-plus"></i> Create Project
+      </a>
+      <a href="#" id="sidebar" class="right-sidebar-toggle" style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;">
+          <i class="fa fa-clock-o"></i>Time Sheets
+      </a>
+      <a href="login.html" style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;">
+          <i class="fa fa-edit"></i> Edit Project
+      </a>
   </nav>
+  <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->
+</div>
+
 
 <h1 class='float-left text' id='text-color-title'>{{title | uppercase}}</h1>
 <div class='container buttonAdd'>
-  <button class="btn btn-lg btn-warning text-white float-right" (click)="openAdd(kiran,'Add')">Add new Designation</button>
+  <button class="btn btn-lg btn-warning text-white float-right" (click)="openAdd(kiran,'Add')">Add new Document</button>
 </div>
 <br><br><br><br>
 <div class='container' id='search'>
@@ -29,7 +44,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of arrDesig; let i=index">
+    <tr *ngFor="let item of arrDoc; let i=index">
       <td>{{i+1}}</td>
       <td>{{item.name}}</td>
       <td>{{item.description}}</td>

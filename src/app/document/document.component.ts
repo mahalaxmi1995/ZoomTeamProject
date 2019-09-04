@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import { NgbModalBackdrop } from '@ng-bootstrap/ng-bootstrap/modal/modal-backdrop';
-import { Designation } from '../designation/designation';
-
+import{Document} from './document'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-document',
@@ -11,19 +10,19 @@ import { Designation } from '../designation/designation';
 })
 export class DocumentComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,private router : Router) { }
   updatedItem: number;
-  title = 'Designations';
+  title = 'Documents';
   closeResult: string;
   selectedDesignationOption: string;
   name: string;
   msg = 'Are You Sure!';
   description:string;
 
-  arrDesig: Designation[ ] = [
-  new Designation('Software Engineer', 'Software Engineer'),
-  new Designation('System AdminiStator', 'System AdminiStator'),
-  new Designation('Sr. Software', 'Senior Software Engineer')
+  arrDoc: Document[ ] = [
+  new Document('Software Engineer', 'Software Engineer'),
+  new Document('System AdminiStator', 'System AdminiStator'),
+  new Document('Sr. Software', 'Senior Software Engineer')
  ];
   editId:number;
   editName:string;
@@ -36,7 +35,7 @@ export class DocumentComponent implements OnInit {
 
     console.log(value);
     if (value != '') {
-      this.arrDesig = this.arrDesig.filter(x => x.name.startsWith(value));
+      this.arrDoc = this.arrDoc.filter(x => x.name.startsWith(value));
     }
     this.ngOnInit();
   }
@@ -54,8 +53,8 @@ export class DocumentComponent implements OnInit {
     console.log(content);
     this.selectedDesignationOption = passedTitle;
     // console.log(i);
-    this.name = this.arrDesig[i].name;
-    this.description = this.arrDesig[i].description;
+    this.name = this.arrDoc[i].name;
+    this.description = this.arrDoc[i].description;
     // console.log('updating');
     this.updatedItem = i;
     this.modalService.open(content);
@@ -66,7 +65,7 @@ export class DocumentComponent implements OnInit {
   onDesigDelete(desig) {
     console.log(desig);
     if (confirm(this.msg) === true) {
-      this.arrDesig.splice(this.arrDesig.indexOf(desig), 1);
+      this.arrDoc.splice(this.arrDoc.indexOf(desig), 1);
     }
 
   }
@@ -74,16 +73,16 @@ export class DocumentComponent implements OnInit {
   onFormSubmit() {
     if (this.selectedDesignationOption == 'Add') {
       console.log(this.name);
-      this.arrDesig.push(new Designation(this.name, this.description));
+      this.arrDoc.push(new Document(this.name, this.description));
     } else {
       let data = this.updatedItem;
       // console.log(data);
       // alert(this.arrDesig.length);
-      for (let i = 0; i < this.arrDesig.length; i++) {
+      for (let i = 0; i < this.arrDoc.length; i++) {
         if (i == data) {
-          this.arrDesig[i].name = this.name;
-          this.arrDesig[i].description = this.description ;
-          console.log(this.arrDesig);
+          this.arrDoc[i].name = this.name;
+          this.arrDoc[i].description = this.description ;
+          console.log(this.arrDoc);
 
           // To initialize the fields with empty data
           this.name = '';
@@ -93,5 +92,10 @@ export class DocumentComponent implements OnInit {
     }
     this.modalService.dismissAll();
   }
-
+  designation(){
+    this.router.navigate(['designation']);
+  }
+  Alldoc(){
+    this.router.navigate(['alldoc']);
+  }
 }
